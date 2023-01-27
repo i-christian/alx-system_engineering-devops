@@ -31,7 +31,7 @@ with `ps`, `pgrep`, `pkill`, `pkill`, `exit`, and `trap`.
   * [5-dont_stop_me_now](./5-dont_stop_me_now): Bash script that kills the
   [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) process using `kill`.
 
-* **6. Don't_stop_me_now**
+* **6. Stop me if you can**
   * [6-stop_me_if_you_can](./6-stop_me_if_you_can): Bash script that kills the
   [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) process using `pkill`.
 
