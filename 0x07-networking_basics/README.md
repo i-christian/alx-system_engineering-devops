@@ -30,7 +30,7 @@ This project is the first of two introducing networking concepts. In this projec
     1. Internet
     2. WAN
     3. LAN
-  * What network do you use when you browse www.holbertonschool.com from your
+  * What network do you use when you browse www.google.com from your
   smartphone (not connected to the Wifi)?
     1. Internet
     2. WAN
