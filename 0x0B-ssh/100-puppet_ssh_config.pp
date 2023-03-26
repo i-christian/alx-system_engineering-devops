@@ -1,6 +1,6 @@
 # Client SSH configuration file
 
-file { '/home/christian/.ssh/config':
+file { '~/.ssh/config':
   ensure  => file,
   owner   => 'christian',
   group   => 'christian',
