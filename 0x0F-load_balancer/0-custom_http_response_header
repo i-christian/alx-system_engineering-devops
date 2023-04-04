@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Configure Nginx so that its HTTP response contains a custom header
 
+apt update
+apt install ngnix
 nginx_conf="/etc/nginx/nginx.conf"
 
 # Define the custom header line to be added
@@ -10,4 +12,4 @@ custom_header="\t add_header X-Served-By \$hostname;"
 sudo sed -i "s/^http {/&\n${custom_header}/" "$nginx_conf"
 
 # Restart Server
-sudo service nginx restart
+service nginx restart
