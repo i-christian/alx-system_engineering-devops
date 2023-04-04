@@ -8,3 +8,6 @@ custom_header="\t add_header X-Served-By \$hostname;"
 
 # Execute the sed command to add the custom header line
 sudo sed -i "s/^http {/&\n${custom_header}/" "$nginx_conf"
+
+# Restart Server
+sudo service nginx restart
