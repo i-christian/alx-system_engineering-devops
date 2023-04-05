@@ -6,13 +6,15 @@ web_01_ip="3.80.19.9"
 web_02_ip="54.146.68.236"
 
 # Install HAproxy
-sudo apt update
-sudo apt install -y haproxy
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.6
+apt update
+apt install -y haproxy=2.6.\*
 
 # Configure HAproxy
-sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
-sudo rm /etc/haproxy/haproxy.cfg
-sudo touch /etc/haproxy/haproxy.cfg
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
+rm /etc/haproxy/haproxy.cfg
+touch /etc/haproxy/haproxy.cfg
 
 # Add configuration to HAproxy config file
 sudo sh -c "cat > /etc/haproxy/haproxy.cfg << EOL
@@ -41,4 +43,4 @@ EOL"
 sudo systemctl enable haproxy
 
 # Restart HAproxy
-sudo systemctl restart haproxy
+service haproxy restart

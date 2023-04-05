@@ -1,3 +1,9 @@
+#configure a brand new ubuntu machine
+
+exec {'apt-update':
+  command => '/user/bin/apt-get update'
+}
+
 # Set up Nginx
 class nginx {
   package { 'nginx':
