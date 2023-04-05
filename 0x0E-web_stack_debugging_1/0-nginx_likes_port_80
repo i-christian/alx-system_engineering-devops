@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# A bash script that changes nginx port to 80
+
+sudo apt-get update
+sudo apt-get install net-tools
+sudo netstat -tlnp | grep :80
+
+# Stop Nginx
+sudo service nginx stop
+
+# Backup the original configuration file
+sudo cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.bak
+
+# Modify the configuration file to listen on port 80
+sudo sed -i 's/listen 8080 default_server;/listen 80 default_server;/' /etc/nginx/sites-enabled/default
+sudo sed -i 's/listen \[::\]:8080 default_server ipv6only=on;/listen \[::\]:80 default_server ipv6only=on;/' /etc/nginx/sites-enabled/default
+
+# Start Nginx
+sudo service nginx start
