@@ -2,7 +2,7 @@
 # Configure Nginx so that its HTTP response contains a custom header
 
 sudo apt -y  update
-sudo apt install ngnix -y
+sudo apt install nginx -y
 nginx_conf="/etc/nginx/nginx.conf"
 
 # Define the custom header line to be added
