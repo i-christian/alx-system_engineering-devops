@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 # Debugging Script
+# configure the server to listen for port 80
 
-set -e
-sup kill 26
-
-# change nginx port to 80
-sudo sed -i 's/listen 8080 default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
-
-# restart Nginx
-sudo service nginx restart
-
-# stop Nginx
-sudo service nginx stop
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart
