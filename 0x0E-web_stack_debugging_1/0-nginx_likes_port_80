@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Debugging Script
 # Remove the default Nginx configuration file for port 8080
 rm /etc/nginx/sites-enabled/default
 
