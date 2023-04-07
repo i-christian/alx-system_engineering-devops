@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+# Debugging Script
 
-set -e # exit immediately if a command exits with a non-zero status
+set -e
+sup kill 26
 
 # change nginx port to 80
 sudo sed -i 's/listen 8080 default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
