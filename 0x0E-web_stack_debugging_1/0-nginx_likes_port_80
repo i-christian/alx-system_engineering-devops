@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
-# A bash script that changes nginx port to 80
+
+set -e # exit immediately if a command exits with a non-zero status
+
+# change nginx port to 80
 sudo sed -i 's/listen 8080 default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
+
 # restart Nginx
 sudo service nginx restart
-sudo service stop
+
+# stop Nginx
+sudo service nginx stop
