@@ -1,7 +1,7 @@
 #configure a brand new ubuntu machine
 
 exec {'apt-update':
-  command => '/user/bin/apt-get update'
+  command => '/usr/bin/apt-get update'
 }
 
 # Set up Nginx
