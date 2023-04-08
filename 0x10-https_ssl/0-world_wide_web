@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Define the function to check a subdomain record
+check_record() {
+  local subdomain=$1
+  local domain=$2
+  local record_type=$3
+  local destination=$(dig +short $subdomain.$domain $record_type | awk '{ print $1 }')
+  echo "The subdomain $subdomain is a $record_type record and points to $destination"
+}
+
+# Parse command-line arguments
+domain=$1
+subdomain=$2
+
+# If no subdomain is specified, check the default subdomains
+if [ -z "$subdomain" ]; then
+  check_record "www" $domain "A"
+  check_record "lb-01" $domain "A"
+  check_record "web-01" $domain "A"
+  check_record "web-02" $domain "A"
+else
+  # Otherwise, check the specified subdomain
+  check_record $subdomain $domain "A"
+fi
