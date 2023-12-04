@@ -2,8 +2,8 @@
 # A script that Installs HAproxy on ubuntu 20.04 server
 
 # Store IP addresses in variables
-web_01_ip="3.80.19.9"
-web_02_ip="54.146.68.236"
+web_01_ip="54.172.178.214"
+web_02_ip="100.25.159.141"
 
 # Install HAproxy
 apt-get -y install software-properties-common
