@@ -40,7 +40,7 @@ backend servers
 EOL"
 
 # Configure init script for HAproxy
-sudo systemctl enable haproxy
+sudo service haproxy enable
 
 # Restart HAproxy
 service haproxy restart
